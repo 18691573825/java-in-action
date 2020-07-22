@@ -5,7 +5,8 @@
 #    url: jdbc:mysql://localhost:3306/ds_01?serverTimezone=Asia/Shanghai&useSSL=false
 #    username: root 
 #    password: root
-
+server:
+    port: 8899
 spring:
     shardingsphere:
         props:
@@ -16,13 +17,13 @@ spring:
             names: ds1,ds2
             ds1:
                 type: com.zaxxer.hikari.HikariDataSource
-                driverClassName: com.mysql.jdbc.Driver
+                driverClassName: com.mysql.cj.jdbc.Driver
                 jdbc-url: jdbc:mysql://localhost:3306/ds_01?serverTimezone=Asia/Shanghai&useSSL=false
                 username: root
                 password: root
             ds2:
                 type: com.zaxxer.hikari.HikariDataSource
-                driverClassName: com.mysql.jdbc.Driver
+                driverClassName: com.mysql.cj.jdbc.Driver
                 jdbc-url: jdbc:mysql://localhost:3306/ds_02?serverTimezone=Asia/Shanghai&useSSL=false
                 username: root
                 password: root
